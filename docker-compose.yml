@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    ubuntu-desktop-lxde-vnc:
+        container_name: UbuntuLxde
+        ports:
+            - '9980:80'
+            - '9959:5900'
+        environment:
+            - RESOLUTION=1920x1080
+            - VNC_PASSWORD=7529
+        volumes:
+            - '/dev/shm:/dev/shm'
+        restart: unless-stopped
+        image: dorowu/ubuntu-desktop-lxde-vnc
